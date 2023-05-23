@@ -1,5 +1,4 @@
 <template>
-    
 <div>
     <saleSlider></saleSlider>
 </div>
@@ -13,25 +12,30 @@
     <productsitem></productsitem>
 </div>
 <div>
-<Productgrid></Productgrid>
+    <Productgrid></Productgrid>
 </div>
 <div>
-<productcarsoul></productcarsoul>
+    <productcarsoul></productcarsoul>
 </div>
 <div>
-<AllProduct></AllProduct>
+    <allProduct></allProduct>
 </div>
+<div>
+<sliderintwo></sliderintwo>
+</div>
+
 </template>
 
 <script>
 import saleSlider from '@/components/View/sliders/SaleSlider'
 import productslist from '@/components/View/Products/Productslist'
 import sliderproduct from '@/components/View/sliders/Sliderproduct'
-import productsitem from '../CategoriesProduct/Productsitem.vue'
+import productsitem from '@/components/View/CategoriesProduct/Productsitem.vue'
 import productcarsoul from '@/components/View/sliders/productcarsoul'
-import AllProduct from '../Products/AllProduct.vue'
 import Productgrid from '@/components/View/CategoriesProduct/Productgrid'
-export default {
+import allProduct from '@/components/View/Products/AllProduct.vue'
+import sliderintwo from "@/components/View/sliders/sliderintwo.vue"
+export default  {
     name: "Home-page",
     components: {
         productslist,
@@ -39,8 +43,9 @@ export default {
         sliderproduct,
         productsitem,
         productcarsoul,
-        AllProduct,
-        Productgrid
+        Productgrid,
+        allProduct,
+        sliderintwo
     },
 
 }
@@ -198,7 +203,8 @@ export default {
     left: 0;
     width: 100%;
     height: 100%;
-    background:   #eee;;
+    background: #eee;
+    ;
     transform-origin: 0 0;
 }
 </style>

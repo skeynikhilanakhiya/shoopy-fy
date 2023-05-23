@@ -1,7 +1,8 @@
 <template>
     <div class="row" style="  margin-right: 15px;">
         <div class="col-12 text-center">
-            <h2>𝓑𝓔𝓢𝓣 𝓔𝓧𝓒𝓛𝓤𝓢𝓘𝓥𝓔 𝓑𝓡𝓐𝓝𝓓𝓢</h2>
+            <h2 style="  margin-top: 67px;
+  margin-left: 57px;">𝓑𝓔𝓢𝓣 𝓔𝓧𝓒𝓛𝓤𝓢𝓘𝓥𝓔 𝓑𝓡𝓐𝓝𝓓𝓢</h2>
         </div>
     </div>
     <!-- Gallery -->

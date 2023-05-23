@@ -23,11 +23,11 @@
                     <ul class="menu-section" style="  margin-right: -296px;">
                         <li>
                             <router-link to="/">
-                                <a href="#" class="home" style="margin-right: -32px;" >Home</a>
+                                <a href="#" class="home" style="margin-right: -46px;color: black;">Home</a>
                             </router-link>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#" style="  margin-left: -119px;"       class="responsiv">What's New <i class="ion ion-ios-arrow-down"></i></a>
+                            <a href="#" style="  margin-left: -119px;" class="responsiv">What's New <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item text-center">
                                     <a href="#">
@@ -483,7 +483,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="menu-item-has-children" >
+                        <li class="menu-item-has-children">
                             <a href="#" style="  margin-left: 19px;" class="responsiv">Home & Living <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-mega menu-column-4">
                                 <div class="list-item">
@@ -712,21 +712,25 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="# " style="  margin-left: 19px;"  class="responsiv">Contact</a></li>
+                        <li><a href="# " style="  margin-left: 19px;" class="responsiv">Contact</a></li>
 
                         <li>
                             <a href="" style="  margin-left: 279px;">
-                            <label for="Search">Search :<span>&nbsp;</span></label>
-                            <input type="search">
+                                <div class="wrap">
+                                    <div class="search">
+                                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                        <button type="submit" class="searchButton">
+                                            <i class="fa fa-search" style="width: 58px;"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </a>
                         </li>
                     </ul>
                 </nav>
             </div>
             <div class="header-item-right">
-                <a href="#" class="menu-icon"><i class="ion ion-md-search"></i></a>
-                <a href="#" class="menu-icon"><i class="ion ion-md-heart"></i></a>
-                <a href="#" class="menu-icon"><i class="ion ion-md-cart"></i></a>
+                <a href="#" class="menu-icon"><i class="fa-solid fa-cart-shopping" style="color: #4d8efe;"></i></a>
                 <button type="button" class="menu-mobile-trigger">
                     <span></span>
                     <span></span>
@@ -1114,26 +1118,65 @@ video {
 }
 
 .header-item-right .menu-icon {
-    font-size: 1.35rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-left: 1rem;
-    border: none;
-    outline: none;
-    color: #121212;
-    -webkit-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+font-size: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-left: 75px;
+  border: none;
+  outline: none;
+  color: #121212;
+  transition: all 0.3s ease;
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
 }
 
+.search {
+  width:  600%;
+  position: relative;
+  display: flex;
+  margin-left: -188px;
+}
+
+.searchTerm {
+  /* width: 586%;   */
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 37px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 60px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .header .menu>ul>li {
     display: inline-block;
     line-height: 3.125rem;
@@ -1414,9 +1457,11 @@ video {
         line-height: 1;
         margin: 0;
     }
-.header .menu>ul>li>a>.responsiv{
-    margin-left: -130px;
-}
+
+    .header .menu>ul>li>a>.responsiv {
+        margin-left: -130px;
+    }
+
     .header .menu>ul>li>a {
         display: block;
 
