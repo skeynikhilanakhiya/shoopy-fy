@@ -21,9 +21,16 @@
     <allProduct></allProduct>
 </div>
 <div>
-<sliderintwo></sliderintwo>
+    <sliderintwo></sliderintwo>
 </div>
-
+<div>
+    <Leatestproduct></Leatestproduct>
+</div>
+<div>
+    <UnissibleProduct></UnissibleProduct>
+</div>
+<div>
+<InfulanserProduct></InfulanserProduct></div>
 </template>
 
 <script>
@@ -35,7 +42,10 @@ import productcarsoul from '@/components/View/sliders/productcarsoul'
 import Productgrid from '@/components/View/CategoriesProduct/Productgrid'
 import allProduct from '@/components/View/Products/AllProduct.vue'
 import sliderintwo from "@/components/View/sliders/sliderintwo.vue"
-export default  {
+import Leatestproduct from '@/components/View/sliders/LeatestProduct.vue'
+import UnissibleProduct from '@/components/View/sliders/UnissibleProduct'
+import InfulanserProduct from '@/components/View/sliders/InfulanserProduct'
+export default {
     name: "Home-page",
     components: {
         productslist,
@@ -45,7 +55,10 @@ export default  {
         productcarsoul,
         Productgrid,
         allProduct,
-        sliderintwo
+        sliderintwo,
+        Leatestproduct,
+        UnissibleProduct,
+        InfulanserProduct
     },
 
 }
