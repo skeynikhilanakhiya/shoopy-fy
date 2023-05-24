@@ -1,17 +1,19 @@
 <template>
 <navigation />
 <router-view></router-view>
-<!-- <end /> -->
+
+<appfooter />
+
 </template>
 
 <script>
 import navigation from './components/View/Header&Footer/Header.vue';
-// import end from './components/View/Header&Footer/Footer.vue';
+import appfooter from './components/View/Header&Footer/Footer.vue';
 export default {
     name: 'App',
     components: {
         navigation,
-        // end
+        appfooter
     }
 }
 </script>
