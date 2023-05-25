@@ -7,7 +7,7 @@
 </header> -->
 <header class="header">
     <div class="container">
-        <div class="wrapper">
+        <div class="wrapper" style="  width: 117%;">
             <div class="header-item-left">
                 <h1><a href="#" class="brand"><img src="@/assets/WhatsApp.jpeg" alt="" style="  height:60px; width:60px;
   margin-top: -47px;"></a></h1>
@@ -704,11 +704,11 @@
                         <li class="menu-item-has-children">
                             <a href="#" style="  margin-left: 19px;" class="responsiv">Accounts <i class="ion ion-ios-arrow-down"></i></a>
                             <div class="menu-subs menu-column-1">
+
                                 <ul>
-                                    <li><a href="#">Login and Register</a></li>
-                                    <li><a href="#">Help and Question</a></li>
-                                    <li><a href="#">Privacy and Policy</a></li>
-                                    <li><a href="#">Term of Cookies</a></li>
+                                <li>
+                                   <router-link to="/login"> <a href="#" style="    font-size: 14px;">Login and Register</a></router-link></li>
+                                   
                                 </ul>
                             </div>
                         </li>
@@ -729,15 +729,15 @@
                     </ul>
                 </nav>
             </div>
-            <div class="header-item-right">
-                <a href="#" class="menu-icon"><i class="fa-solid fa-cart-shopping" style="color: #4d8efe;"></i></a>
-                <button type="button" class="menu-mobile-trigger">
+            <i class="fa fa-user" id="profile" aria-hidden="true"></i><a href="#" class="profile">Profile</a> 
+   
+          <i class="fa-sharp fa-solid fa-heart"  id="icon"></i><a href="#" class="wishlist">Wishlist</a> 
+        <span  class="spans"><i class="fa fa-shopping-bag" id="bag" aria-hidden="true"></i></span><a href="#" class="ancer">Bag</a> 
+                    
                     <span></span>
                     <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+             
+       
         </div>
     </div>
 </header>
@@ -912,6 +912,31 @@ export default {
 </script>
 
 <style scoped>
+#profile{
+    font-size: x-large;
+    background: transparent;    color: #7e7e7e;
+}
+.profile{
+      margin-top: 42px;
+  margin-left: -28px;
+}
+.ancer{
+    margin-top: 40px;
+  margin-left: -23px;
+}
+#bag{
+    color: #7e7e7e;font-size: x-large;cursor:pointer;
+}
+.spans{
+    margin-left: 40px;
+}
+.wishlist{
+    margin-top: 40px;
+  margin-left: -23px;
+}
+#icon{
+    color: #7e7e7e;font-size: x-large;margin-left: -178px;  margin-right: -11px;cursor:pointer;
+}
 @-webkit-keyframes slideLeft {
     0% {
         opacity: 0;
