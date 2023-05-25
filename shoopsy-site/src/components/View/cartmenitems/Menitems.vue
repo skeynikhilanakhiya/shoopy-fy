@@ -26,14 +26,20 @@
                 </ul>
             </div>
         </nav>
-        <div class="ml-auto mt-3 mr-2">
+        <div class="ml-auto mt-3 mr-2" style="margin-right:20px;">
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                    <li class="page-item"> <a class="page-link" href="#" aria-label="Previous"> <span aria-hidden="true" class="font-weight-bold">&lt;</span> <span class="sr-only">Previous</span> </a> </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">..</a></li>
-                    <li class="page-item"><a class="page-link" href="#">24</a></li>
-                    <li class="page-item"> <a class="page-link" href="#" aria-label="Next"> <span aria-hidden="true" class="font-weight-bold">&gt;</span> <span class="sr-only">Next</span> </a> </li>
+                    <div class="header-item-right">
+                        <!-- <router-link to="/cart"> -->
+    
+   
+                                <a class="menu-icon" v-on:click="navigateTo('product')" style="margin-right:10px;"><i class="fa fa-arrow-left" style="color: #4d8efe;"></i></a>
+   
+                            <a class="menu-icon"  v-on:click="navigateTo('cart')"><i class="fa-solid fa-cart-shopping" style="color: #4d8efe;"></i></a>
+   <span>{{ cart.length
+   }}</span> 
+                        <!-- </router-link> -->
+                    </div>
                 </ul>
             </nav>
         </div>
@@ -41,29 +47,28 @@
     <div id="content" class="my-5">
         <div id="filterbar" class="collapse">
             <div class="box border-bottom">
-              
-               
-                <div> <label class="tick">Men <input type="checkbox" v-model="newproducts" value="men" checked="checked"> <span class="check"></span>
+
+                <div> <label class="tick">Men <input type="checkbox" v-model="filterproduct" value="men" checked="checked"> <span class="check"></span>
                     </label> </div>
-                <div> <label class="tick">Women <input type="checkbox" v-model="newproducts" value="women"> <span class="check"></span> </label> </div>
+                <div> <label class="tick">Women <input type="checkbox" v-model="filterproduct" value="women"> <span class="check"></span> </label> </div>
 
             </div>
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Categories </div>
                 <div class=" mt-2 mr-1" v-for="option in options" :key="option.id">
-                    <div class="my-1"> <label class="tick"> {{ option.label }} <input type="checkbox" checked="checked" v-model="newproducts" value="T-shirt"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Shirt <input type="checkbox" v-model="newproducts" value="Shirt"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick"> {{ option.label }} <input type="checkbox" checked="checked" v-model="filterproduct" value="T-shirt"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Shirt <input type="checkbox" v-model="filterproduct" value="Shirt"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Pent <input type="checkbox" v-model="newproducts" value="Pent"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">Pent <input type="checkbox" v-model="filterproduct" value="Pent"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Jackets <input type="checkbox" v-model="newproducts" value="Jackets"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">Jackets <input type="checkbox" v-model="filterproduct" value="Jackets"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">CasualShirt <input type="checkbox" v-model="newproducts" value="CasualShirt"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">CasualShirt <input type="checkbox" v-model="filterproduct" value="CasualShirt"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Baggy <input type="checkbox" v-model="newproducts" value="Baggy" checked> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Kurta<input type="checkbox" v-model="newproducts" value="Kurta"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">Baggy <input type="checkbox" v-model="filterproduct" value="Baggy" checked> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Kurta<input type="checkbox" v-model="filterproduct" value="Kurta"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Coat <input type="checkbox" v-model="newproducts" value="Coat" checked> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Coat <input type="checkbox" v-model="filterproduct" value="Coat" checked> <span class="check"></span> </label> </div>
 
                     <div class="my-1" style="cursor: pointer;">
                         <span style="color: red;" class="open-btn">View More</span>
@@ -75,80 +80,80 @@
   height: 417px;">
                                 <ul class="FilterDirectory-list">
                                     <li>#</li>
-                                    <li style="border-top: 1px solid rgb(176, 154, 154);"><label class="tick" style="margin-top: 10px;">Saree <input type="checkbox" v-model="newproducts" value="Saree" checked> <span class="check"></span><span class="FilterDirectory-count"></span> </label><label class="tick">Duppata <input type="checkbox" v-model="newproducts" value="Duppata" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                    <li style="border-top: 1px solid rgb(176, 154, 154);"><label class="tick" style="margin-top: 10px;">Saree <input type="checkbox" v-model="filterproduct" value="Saree" checked> <span class="check"></span><span class="FilterDirectory-count"></span> </label><label class="tick">Duppata <input type="checkbox" v-model="filterproduct" value="Duppata" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Formal <input type="checkbox" v-model="newproducts" value="Formal" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Formal <input type="checkbox" v-model="filterproduct" value="Formal" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Ties <input type="checkbox" v-model="newproducts" value="Ties" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Ties <input type="checkbox" v-model="filterproduct" value="Ties" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Shorts <input type="checkbox" v-model="newproducts" value="Shorts" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Shorts <input type="checkbox" v-model="filterproduct" value="Shorts" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Jeans <input type="checkbox" v-model="newproducts" value="Jeans" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Jeans <input type="checkbox" v-model="filterproduct" value="Jeans" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Dhotis <input type="checkbox" v-model="newproducts" value="Dhotis" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Dhotis <input type="checkbox" v-model="filterproduct" value="Dhotis" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Sherwanis <input type="checkbox" v-model="newproducts" value="Sherwanis" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Sherwanis <input type="checkbox" v-model="filterproduct" value="Sherwanis" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Kurtas & Kurta Sets <input type="checkbox" v-model="newproducts" value="Kurtas & Kurta Sets" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Kurtas & Kurta Sets <input type="checkbox" v-model="filterproduct" value="Kurtas & Kurta Sets" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Blazers <input type="checkbox" v-model="newproducts" value="Blazers" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Blazers <input type="checkbox" v-model="filterproduct" value="Blazers" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Sweaters <input type="checkbox" v-model="newproducts" value="Sweaters" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Sweaters <input type="checkbox" v-model="filterproduct" value="Sweaters" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Perfumes <input type="checkbox" v-model="newproducts" value="Perfumes" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Perfumes <input type="checkbox" v-model="filterproduct" value="Perfumes" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Belts <input type="checkbox" v-model="newproducts" value="Belts" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Belts <input type="checkbox" v-model="filterproduct" value="Belts" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Kurtas & Suits <input type="checkbox" v-model="newproducts" value="Kurtas & Suits" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Kurtas & Suits <input type="checkbox" v-model="filterproduct" value="Kurtas & Suits" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Rings & Wristwear <input type="checkbox" v-model="newproducts" value="Rings & Wristwear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Rings & Wristwear <input type="checkbox" v-model="filterproduct" value="Rings & Wristwear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
-                                        <label class="tick">Caps & Hats <input type="checkbox" v-model="newproducts" value="Caps & Hats" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        <label class="tick">Caps & Hats <input type="checkbox" v-model="filterproduct" value="Caps & Hats" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
                                         </label>
                                         <div class="common-checkboxIndicator"></div>
                                     </li>
 
                                 </ul>
                             </div>
-    <div style="background-color: rgba(255, 255, 255, 0.04);
+                            <div style="background-color: rgba(255, 255, 255, 0.04);
   height: 417px;">
-                                    <ul class="FilterDirectory-list">
-                                        <li>A</li>
-                                        <li style="border-top: 1px solid rgb(255, 255, 255);"><label class="tick" style="margin-top: 10px;">Fashion Jewellery <input type="checkbox" v-model="newproducts" value="Fashion Jewellery" checked> <span class="check"></span><span class="FilterDirectory-count"></span> </label><label class="tick">Boots <input type="checkbox" v-model="newproducts" value="Boots" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Heels <input type="checkbox" v-model="newproducts" value="Heels" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Flats <input type="checkbox" v-model="newproducts" value="Flats" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Lehenga Cholis  <input type="checkbox" v-model="newproducts" value="Lehenga Cholis " checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Dress Materials <input type="checkbox" v-model="newproducts" value="Dress Materials" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Skirts & Palazzos <input type="checkbox" v-model="newproducts" value="Skirts & Palazzos" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Ethnic Wear <input type="checkbox" v-model="newproducts" value="Ethnic Wear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Kurtis, Tunics & Tops  <input type="checkbox" v-model="newproducts" value="Kurtis, Tunics & Tops " checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Blazers <input type="checkbox" v-model="newproducts" value="Blazers" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Camisoles & Thermals <input type="checkbox" v-model="newproducts" value="Camisoles & Thermals" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Swimwear <input type="checkbox" v-model="newproducts" value="Swimwear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Shapewear <input type="checkbox" v-model="newproducts" value="Shapewear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Briefs <input type="checkbox" v-model="newproducts" value="Briefs" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Bra <input type="checkbox" v-model="newproducts" value="Bra" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <label class="tick">Earrings <input type="checkbox" v-model="newproducts" value="Earrings" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
-                                            </label>
-                                            <div class="common-checkboxIndicator"></div>
-                                        </li>
+                                <ul class="FilterDirectory-list">
+                                    <li>A</li>
+                                    <li style="border-top: 1px solid rgb(255, 255, 255);"><label class="tick" style="margin-top: 10px;">Fashion Jewellery <input type="checkbox" v-model="filterproduct" value="Fashion Jewellery" checked> <span class="check"></span><span class="FilterDirectory-count"></span> </label><label class="tick">Boots <input type="checkbox" v-model="filterproduct" value="Boots" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Heels <input type="checkbox" v-model="filterproduct" value="Heels" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Flats <input type="checkbox" v-model="filterproduct" value="Flats" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Lehenga Cholis <input type="checkbox" v-model="filterproduct" value="Lehenga Cholis " checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Dress Materials <input type="checkbox" v-model="filterproduct" value="Dress Materials" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Skirts & Palazzos <input type="checkbox" v-model="filterproduct" value="Skirts & Palazzos" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Ethnic Wear <input type="checkbox" v-model="filterproduct" value="Ethnic Wear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Kurtis, Tunics & Tops <input type="checkbox" v-model="filterproduct" value="Kurtis, Tunics & Tops " checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Blazers <input type="checkbox" v-model="filterproduct" value="Blazers" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Camisoles & Thermals <input type="checkbox" v-model="filterproduct" value="Camisoles & Thermals" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Swimwear <input type="checkbox" v-model="filterproduct" value="Swimwear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Shapewear <input type="checkbox" v-model="filterproduct" value="Shapewear" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Briefs <input type="checkbox" v-model="filterproduct" value="Briefs" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Bra <input type="checkbox" v-model="filterproduct" value="Bra" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <label class="tick">Earrings <input type="checkbox" v-model="filterproduct" value="Earrings" checked> <span class="check"></span><span class="FilterDirectory-count"></span>
+                                        </label>
+                                        <div class="common-checkboxIndicator"></div>
+                                    </li>
 
-                                    </ul>
-                                </div>      
+                                </ul>
+                            </div>
                             <div id="close-btn">&times;</div>
 
                         </div>
@@ -159,13 +164,13 @@
             <div class="box border-bottom">
                 <div class="box-label text-uppercase d-flex align-items-center">Price </div>
                 <div id="inner-box2" class=" mt-2 mr-1">
-                    <div class="my-1"> <label class="tick">Under $10 <input type="checkbox" value="under10" v-model="newproducts"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">$10 - $50 <input type="checkbox" value="10to50" v-model="newproducts"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">Under $10 <input type="checkbox" value="under10" v-model="filterproduct"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">$10 - $50 <input type="checkbox" value="10to50" v-model="filterproduct"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">$50 - $100 <input type="checkbox" checked value="50to100" v-model="newproducts"> <span class="check"></span> </label> </div>
-                    <div class="my-1"> <label class="tick">Over $100 <input type="checkbox" value="over100" v-model="newproducts"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">$50 - $100 <input type="checkbox" checked value="50to100" v-model="filterproduct"> <span class="check"></span> </label> </div>
+                    <div class="my-1"> <label class="tick">Over $100 <input type="checkbox" value="over100" v-model="filterproduct"> <span class="check"></span>
                         </label> </div>
-                    <div class="my-1"> <label class="tick">Over $1000 <input type="checkbox" value="over1000" v-model="newproducts"> <span class="check"></span>
+                    <div class="my-1"> <label class="tick">Over $1000 <input type="checkbox" value="over1000" v-model="filterproduct"> <span class="check"></span>
                         </label> </div>
                 </div>
             </div>
@@ -174,37 +179,37 @@
                     <div class="filter-search-filterSearchBox"><input type="text" class="filter-search-inputBox filter-search-hidden" placeholder="Search for Color"><span class="myntraweb-sprite filter-search-iconSearch sprites-search"></span></div>
                     <ul>
                         <li class="colour-listItem"><label class="common-customCheckbox" data-count="738"><span data-colorhex="black" class="colour-label colour-colorDisplay" style="background-color: rgb(54, 69, 79);"></span>Black
-                                <input type="checkbox" v-model="newproducts" value="Black">
+                                <input type="checkbox" v-model="filterproduct" value="Black">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem"> <label class="common-customCheckbox" data-count="525"><span data-colorhex="blue" class="colour-label colour-colorDisplay" style="background-color: rgb(0, 116, 217);"></span>Blue
-                                <input type="checkbox" v-model="newproducts" value="Blue">
+                                <input type="checkbox" v-model="filterproduct" value="Blue">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem"> <label class="common-customCheckbox" data-count="476"><span data-colorhex="pink" class="colour-label colour-colorDisplay" style="background-color: rgb(241, 169, 196);"></span>Pink
-                                <input type="checkbox" v-model="newproducts" value="Pink">
+                                <input type="checkbox" v-model="filterproduct" value="Pink">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem"> <label class="common-customCheckbox" data-count="473"><span data-colorhex="green" class="colour-label colour-colorDisplay" style="background-color: rgb(94, 177, 96);"></span>Green
-                                <input type="checkbox" v-model="newproducts" value="Green">
+                                <input type="checkbox" v-model="filterproduct" value="Green">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem">
 
                             <label class="common-customCheckbox" data-count="373"><span data-colorhex="white" class="colour-label colour-colorDisplay" style="background-color: rgb(255, 255, 255);"></span>White
-                                <input type="checkbox" v-model="newproducts" value="White">
+                                <input type="checkbox" v-model="filterproduct" value="White">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem">
 
                             <label class="common-customCheckbox" data-count="292"><span data-colorhex="navy blue" class="colour-label colour-colorDisplay" style="background-color: rgb(60, 68, 119);"></span>Navy Blue
-                                <input type="checkbox" v-model="newproducts" value="Navy Blue">
+                                <input type="checkbox" v-model="filterproduct" value="Navy Blue">
                                 <div class="co  mmon-checkboxIndicator"></div>
                             </label></li>
                         <li class="colour-listItem"><label class="common-customCheckbox" data-count="270"><span data-colorhex="red" class="colour-label colour-colorDisplay" style="background-color: rgb(211, 75, 86);"></span>Red
                                 <span class="colour-num">
                                 </span>
-                                <input type="checkbox" v-model="newproducts" value="Red">
+                                <input type="checkbox" v-model="filterproduct" value="Red">
                                 <div class="common-checkboxIndicator"></div>
                             </label></li>
                     </ul>
@@ -221,8 +226,11 @@
                 </div>
             </div>
         </div>
-        <div id="products" style="z-index: 0;">
-            <div class="row d-flex ">
+        <div v-if="page === 'product'">
+            
+    
+        <div id="products" style="z-index:0;">
+            <div class="row d-flex " >
                 <div class="col-md-3  " v-for="item in filteredData" :key="item.id">
                     <div class="product-grid ">
                         <div class="product-image">
@@ -235,9 +243,11 @@
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-random"></i></a></li>
                             </ul>
-                            <router-link :to="{ name: 'Men', params: { slug: 'Items' } }">
-                                <a href="" class="add-to-cart">Add to Cart</a>
-                            </router-link>
+                            <!-- <router-link to="/cart"> -->
+                         <button type="button"    class="add-to-cart" v-on:click="Addtocart(item)">
+                               Add to Cart
+                            <!-- </router-link> -->
+                         </button>
                         </div>
                         <div class="product-content">
                             <h3 class="title"><a href="#">{{ item.title }}</a></h3>
@@ -247,17 +257,46 @@
                 </div>
 
             </div>
-        </div>
+        </div></div>
+        <div v-if="page === 'cart'">
+         <div id="products" style="z-index:0;">
+                <div class="row d-flex " >
+                    <div class="col-md-3  " v-for="item in cart" :key="item.id">
+                        <div class="product-grid ">
+                            <div class="product-image">
+                                <a href="#" class="image">
+                                    <img :src="item.imges">
+                                </a>
+                                <span class="product-discount-label">-23%</span>
+                                <ul class="product-links">
+                                    <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-random"></i></a></li>
+                                </ul> 
+                             <button type="button"    class="add-to-cart" v-on:click="RemoveItemFromCart(item)"> 
+                                   Remove to Cart
+                              </button>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="#">{{ item.title }}</a></h3>
+                                <div class="price">{{ item.price }}<span>$53.55 </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
     </div>
 </div>
 </template>
 
 <script>
-
 export default {
     name: "Mens-items",
     data() {
         return {
+            page:"product",
             options: [{
                     id: 1,
                     label: 'T-shirt'
@@ -266,69 +305,82 @@ export default {
                 // Add more options as needed
             ],
             // selectedOptions: [],
-            newproducts: [],
-            addcategories:[],
+            filterproduct: [],
+
+            Checked: [],
+
+            cart:[],
             products: [{
                     "id": 1,
                     "title": "T-shirt",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/1996777/2022/11/22/336445a8-fa32-4396-914a-2629b49465d31669112704759RoadsterMenBlackCottonPureCottonT-shirt1.jpg",
-                    "price": "$45.00",
-                    "ideal_type":"men",
+                    "price": "$5.00",
+                    "ideal_type": "men",
 
                     "category": "T-shirt",
-                    "prices": "under10"
+                    "prices": "under10",
                 },
                 {
                     "id": 2,
                     "title": "Shirt",
                     "imges": "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/1364628/2016/8/31/11472636737718-Roadster-Men-Blue-Regular-Fit-Printed-Casual-Shirt-6121472636737160-1.jpg",
-     
+                "prices": "10to50",
+
                     "price": "$40.00",
                     "category": "Shirt",
-                      "ideal_type": "men"
+                    "ideal_type": "men"
 
                 }, {
                     "id": 3,
 
                     "title": "Jackets",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20618728/2022/11/4/a1272f43-b234-4773-8aad-1181f48954a51667546666113Jackets1.jpg",
-     
-                    "price": "$45.00",
+                "prices": "50to100",
+
+                    "price": "$85.00",
                     "category": "Jackets",
-                      "ideal_type": "men"
+                    "ideal_type": "men"
 
                 },
                 {
                     "id": 4,
                     "title": "Pent",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/1729344/2020/3/2/84a03c78-f8e5-4c20-942c-8ea6e4a9ed641583150812330-WROGN-Men-Black-Slim-Fit-Mid-Rise-Clean-Look-Stretchable-Jea-1.jpg",
-       "ideal_type": "men",
-                    "price": "$45.00",
-                    "category": "Pent"
+                    "ideal_type": "men",
+                    "price": "$145.00",
+                    "category": "Pent",
+                    "prices": "over100",
+
 
                 }, {
                     "id": 5,
                     "title": "Coat",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20276790/2022/10/6/42d711c0-5f38-4c6a-a123-ac6bf862dfd31665038713926MenBlackTwoPieceSuit1.jpg",
-       "ideal_type": "men",
-                    "price": "$45.00",
-                    "category": "Coat"
+                    "ideal_type": "men",
+                    "price": "$245.00",
+                    "category": "Coat",
+                    "prices": "over100",
+
 
                 }, {
                     "id": 6,
                     "title": "Kurta",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20038544/2022/9/17/eae29efd-88d6-4ac5-982f-8db5afd7d40d1663406125913JompersMenBlackFlaredSleevesPathaniKurta1.jpg",
-       "ideal_type": "men",
-                    "price": "$45.00",
-                    "category": "Kurta"
+                    "ideal_type": "men",
+                    "price": "$485.00",
+                    "category": "Kurta",
+                    "prices": "over100",
+
 
                 }, {
                     "id": 7,
                     "title": "Baggy",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20179254/2022/9/27/6488dabd-5c2b-40d1-898e-6414f87b968e1664260019035RelaxedFitHoodie1.jpg",
-       "ideal_type": "men",
-                    "price": "$45.00",
-                    "category": "Baggy"
+                    "ideal_type": "men",
+                    "price": "$225.00",
+                    "category": "Baggy",
+                    "prices": "over100",
+
 
                 },
                 {
@@ -336,27 +388,28 @@ export default {
                     "title": "CasualShirt",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/1376577/2022/6/3/ea10ab6c-883e-437a-8780-ed87484393f81654235830793-Roadster-Men-Black--Grey-Checked-Casual-Sustainable-Shirt-42-1.jpg",
                     "categories": "CasualShirt",
-       "ideal_type": "men",
-                    "price": "$45.00",
-                    "category": "CasualShirt"
+                    "ideal_type": "men",
+                    "price": "$65.00",
+                    "category": "CasualShirt",
+                    "prices": "50to100",
+
 
                 },
                 {
                     "id": 9,
-                    
+
                     "title": "Saree",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/21209326/2023/1/11/ef0dbde1-af80-4465-8b7b-6025cdb867c41673437032164-kasee-Embellished-Beads-and-Stones-Saree-8081673437031391-1.jpg",
                     "price": "$45.00",
                     "category": "Saree",
-                      "ideal_type": "women"
+                    "ideal_type": "women"
 
                 },
                 {
                     "id": 10,
                     "title": "H&M",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/17877308/2022/4/13/f0a1a350-96ed-4be8-a873-f61993de9fc01649856174872SochWomenBeigeDupatta1.jpg",
-                      "ideal_type": "women"
-                    ,
+                    "ideal_type": "women",
                     "price": "$45.00",
                     "category": "Duppata"
                 },
@@ -364,8 +417,8 @@ export default {
                     "id": 11,
                     "title": "HELLCAT",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15225020/2023/1/31/569859cf-9c74-4e26-9e6b-b585d49469471675163985502-LOUIS-STITCH-Men-Blue--White-Printed-Broad-Tie-4171675163985-1.jpg",
-                      "ideal_type": "men",
-     
+                    "ideal_type": "men",
+
                     "category": "Ties",
                     "price": "$45.00",
                 },
@@ -373,8 +426,8 @@ export default {
                     "id": 12,
                     "title": "SethuKrishna",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/15620402/2021/9/25/67dc58c1-8509-4d40-81cd-f4318ed81fba1632582459118MenReadymadeDhotiPant1.jpg",
-                      "ideal_type": "men",
-     
+                    "ideal_type": "men",
+
                     "category": "Dhotis",
                     "price": "$1145.00",
                 }, {
@@ -382,59 +435,71 @@ export default {
                     "title": "HELLCAT",
                     "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19453822/2022/8/10/10810342-b2fa-46a2-813a-16544283bc141660107353797VastramayMensPurpleAndRoseGoldSilkBlendSherwaniSet1.jpg",
                     "category": "Sherwanis",
-                      "ideal_type": "men",
-     
+                    "ideal_type": "men",
+
                     "price": "$1145.00",
                 },
                 {
-                "id": 14,
-                "title": "HELLCAT",
-                "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19023968/2022/12/16/519cd711-54a9-496b-929e-0e59ac898e931671177660408-Blackberrys-Men-Shirts-2311671177659814-1.jpg",
-                "category": "Formal",
-                "ideal_type": "men",
+                    "id": 14,
+                    "title": "HELLCAT",
+                    "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/19023968/2022/12/16/519cd711-54a9-496b-929e-0e59ac898e931671177660408-Blackberrys-Men-Shirts-2311671177659814-1.jpg",
+                    "category": "Formal",
+                    "ideal_type": "men",
 
-                "price": "$1145.00",
-            },{
-                "id": 15,
-                "title": "HELLCAT",
-                "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8706059/2022/8/25/600ba77d-27a6-4d99-8f31-b349edb6aec81661422693616-HIGHLANDER-Men-Blue-Tapered-Fit-Mid-Rise-Clean-Look-Stretcha-1.jpg",
-                "category": "Jeans",
-                "ideal_type": "men",
+                    "price": "$1145.00",
+                }, {
+                    "id": 15,
+                    "title": "HELLCAT",
+                    "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/8706059/2022/8/25/600ba77d-27a6-4d99-8f31-b349edb6aec81661422693616-HIGHLANDER-Men-Blue-Tapered-Fit-Mid-Rise-Clean-Look-Stretcha-1.jpg",
+                    "category": "Jeans",
+                    "ideal_type": "men",
 
-                "price": "$1145.00",
-            },{
-                "id": 16,
-                "title": "HELLCAT",
-                "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20037372/2022/9/26/35fc44b2-0ffe-45a8-8d8b-f2197f8ed7911664183869798-DressBerry-Women-Bra-4381664183869340-1.jpg",
-                "category": "Bra",
-                "ideal_type": "men",
+                    "price": "$1145.00",
+                }, {
+                    "id": 16,
+                    "title": "HELLCAT",
+                    "imges": "https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/20037372/2022/9/26/35fc44b2-0ffe-45a8-8d8b-f2197f8ed7911664183869798-DressBerry-Women-Bra-4381664183869340-1.jpg",
+                    "category": "Bra",
+                    "ideal_type": "men",
+                    "prices": "over100",
 
-                "price": "$1145.00",
-            }
+                    "price": "$1145.00",
+                }
             ],
 
         }
     },
     computed: {
         filteredData() {
- 
-            console.log(this.newproducts);
+
+            console.log(this.filterproduct);
             // Apply filter based on selected options
-            if (this.newproducts.length == 0) {
-                return this.products;
-            } else {
-                return this.products.filter((item) => this.newproducts.includes(item.category || item.ideal_type));
-            }
-          
+            if (this.filterproduct.length == 0) {
+                return this.products; 
+            } 
             
+            else {
+                return [...this.products.filter((item) => this.filterproduct.includes(item.category))] 
+            }
         },
 
     },
     methods: {
+       
 
+        Addtocart(item) {
+            this.cart.push(item)
+            console.log(this.cart);
+        },
+        navigateTo(page){
+            this.page =page ;
+        },
+        RemoveItemFromCart(item){
+            this.cart.splice(this.cart.indexOf(item),1)
+        }
     },
     mounted() {
-       
+
         const openButton = document.querySelector('.open-btn')
         const closeButton = document.querySelector('#close-btn')
         const modalContainer = document.querySelector('#modal-container')
@@ -511,7 +576,7 @@ export default {
 #close-btn {
     font-size: 2rem;
     margin-top: -383px;
-      margin-left: -27px;
+    margin-left: -27px;
 }
 
 #close-btn:hover {
@@ -915,7 +980,6 @@ export default {
 .header-title {
     font-weight: 700
 }
-
 
 .title-container {
     margin: 10px 0 5px 25px;
@@ -1370,5 +1434,4 @@ label {
     margin: 10px;
     margin-left: 0px
 }
-
 </style>
