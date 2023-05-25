@@ -10,13 +10,26 @@ import Subitems from '@/components/View/cartmenitems/Menitems'
 // import Womenproductitem from "@/components/View/cartwomenitems/Womenproductitem.vue"
 // import womenitems from '@/components/View/cartwomenitems/womenitems'
 import MenitemsCart from "@/components/View/Cart/MenitemsCart.vue"
+import LoginPage from '@/components/View/Login&RegisterPage/LoginPage'
+// import AddtoCart from '@/components/View/Cart/AddtoCart'
 // import Checkboxfilter from "@/components/View/ProductFilter/CheckboxFilter.vue"
 const routes = [
     {
         path: '/',
         name: 'Home-page',
         component: Home
-    }, {
+    }, 
+    // {
+    //     path: '/cart',
+    //     name: 'Add-Product',
+    //     component: AddtoCart
+    // }, 
+    {
+        path: '/login',
+        name: 'Login-page',
+        component: LoginPage
+    },
+    {
         path: '/cart-page',
         name: 'cart-page',
         component: Selectproduct
