@@ -1,7 +1,7 @@
 <template>
  
      <div class="row">
-        <div class="text-left col-12 " style="margin-top: 30px;margin-bottom: 30px;">
+        <div class="text-center col-12 " style="margin-top: 30px;margin-bottom: 30px;">
              <h2>𝓛𝓮𝓪𝓽𝓮𝓼𝓽 𝓟𝓻𝓸𝓭𝓾𝓬𝓽</h2>
 
         </div>

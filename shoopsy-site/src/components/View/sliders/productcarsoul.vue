@@ -62,7 +62,7 @@ export default {
 
 <style scoped>
 h2 {
-    float: left;
+    float: center;
     margin-left: 32px;
     margin-top: 90px;
     font-family: fantasy;

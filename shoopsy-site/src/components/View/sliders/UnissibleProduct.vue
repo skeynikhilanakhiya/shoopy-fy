@@ -1,6 +1,6 @@
 <template>
      <div class="row">
-        <div class="text-left col-12" style="margin-top: 30px;margin-bottom: 30px;">
+        <div class="text-center col-12" style="margin-top: 30px;margin-bottom: 30px;">
           <h2>𝓑𝓡𝓐𝓝𝓓𝓢 𝓐𝓣 𝓢𝓛𝓐𝓢𝓗𝓔𝓓 𝓟𝓡𝓘𝓒𝓔𝓢</h2>
         </div>
         <div class="col" style="margin-right: 4px;margin-left: 35px;">

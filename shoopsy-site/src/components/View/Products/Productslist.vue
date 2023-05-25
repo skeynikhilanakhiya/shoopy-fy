@@ -27,7 +27,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@800&display=swap');
 
 h2 {
-    float: left;
+    float: center;
     margin-left: 32px;
     margin-top: 90px;
     font-family: fantasy;

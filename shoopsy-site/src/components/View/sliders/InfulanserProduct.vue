@@ -1,7 +1,7 @@
 <template>
 
     <div class="row">
-            <div class="text-left col-12" style="margin-top: 30px;margin-bottom: 30px;">
+            <div class="text-center col-12" style="margin-top: 30px;margin-bottom: 30px;">
               <h2>𝓣𝓞𝓟 𝓘𝓝𝓕𝓛𝓤𝓔𝓝𝓒𝓔𝓡𝓢 𝓔𝓧𝓒𝓛𝓤𝓢𝓘𝓥𝓔 𝓢𝓣𝓨𝓛𝓔𝓢</h2>
             </div>
             <div class="col" >
