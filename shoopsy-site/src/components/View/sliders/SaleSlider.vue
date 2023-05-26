@@ -6,10 +6,18 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+
 
     </ol>
     <div class="carousel-inner" style="  height: 389px;margin-top: 49px;">
-      <div class="carousel-item active" style="">
+     <div class="carousel-item active" style="">
+        <img class="d-block w-100" src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/5/25/0c3290bf-763c-45d8-8cc8-19f04887c6921685033723850-Curtain-raiser_DK-banner.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item " style="">
+          <img class="d-block w-100" src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/84b6a214-9eb3-49eb-9f9d-72cec56ec5d71659019908592-Indian-Wear_DK--1-.jpg" alt="First slide">
+        </div>
+      <div class="carousel-item " style="">
         <img class="d-block w-100" src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2022/7/28/6107d28b-2bcb-44e6-9743-655b54550b8f1659020199598-Workwear_Desk--1-.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
