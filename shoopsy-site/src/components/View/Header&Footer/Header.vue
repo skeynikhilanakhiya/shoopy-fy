@@ -9,7 +9,8 @@
     <div class="container">
         <div class="wrapper" style="  width: 117%;">
             <div class="header-item-left">
-                <h1><a href="#" class="brand"><img src="@/assets/WhatsApp.jpeg" alt="" style="  height:60px; width:60px;
+                <h1><a href="#" class="brand"><img src="@/assets/WhatsApp.jpeg" alt="" style="  height: 49px;
+  width: 52px;
   margin-top: -47px;"></a></h1>
             </div>
             <div class="header-item-center">
@@ -631,18 +632,7 @@
                                         </li><br>
 
                                     </ul>
-                                    <!-- <hr style="border-top: 1px dotted black;border-right-width: 10px;"> -->
-
-                                    <!-- <h4 class="title" style="margin-left: -2px;">Lingerie & Sleepwear</h4><br>
-                                    <ul>
-                                        <li style="float: left;"><a href="#">Bra</a></li><br>
-                                        <li style="float: left;"><a href="#">Briefs</a></li><br>
-                                        <li style="float: left;"><a href="#">Shapewear</a></li><br>
-
-                                        <li style="float: left;"><a href="#">Swimwear</a></li><br>
-                                        <li style="float: left;"><a href="#">Camisoles & Thermals</a></li><br>
-
-                                    </ul> -->
+                                   
                                 </div>
                                 <div class="list-item">
                                     <h4 class="title">Home Décor</h4><br>
@@ -730,8 +720,7 @@
                 </nav>
             </div>
             <i class="fa fa-user" id="profile" aria-hidden="true"></i><a href="#" class="profile">Profile</a> 
-   
-          <i class="fa-sharp fa-solid fa-heart"  id="icon"></i><a href="#" class="wishlist">Wishlist</a> 
+
         <span  class="spans"><i class="fa fa-shopping-bag" id="bag" aria-hidden="true"></i></span><a href="#" class="ancer">Bag</a> 
                     
                     <span></span>
@@ -848,73 +837,73 @@ export default {
             this.currentProducts = category != '' ? this.products.filter(product => product.category === category) : this.products;
         }
     },
-    mounted() {
-        const menu = document.querySelector('.menu');
-        const menuSection = menu.querySelector('.menu-section');
-        const menuArrow = menu.querySelector('.menu-mobile-arrow');
-        const menuClosed = menu.querySelector('.menu-mobile-close');
-        const menuTrigger = document.querySelector('.menu-mobile-trigger');
-        const menuOverlay = document.querySelector('.overlay');
-        let subMenu;
-        menuSection.addEventListener('click', (e) => {
-            if (!menu.classList.contains('active')) {
-                return;
-            }
-            if (e.target.closest('.menu-item-has-children')) {
-                const hasChildren = e.target.closest('.menu-item-has-children');
-                showSubMenu(hasChildren);
-            }
-        });
-        menuArrow.addEventListener('click', () => {
-            hideSubMenu();
-        });
-        menuTrigger.addEventListener('click', () => {
-            toggleMenu();
-        });
-        menuClosed.addEventListener('click', () => {
-            toggleMenu();
-        });
-        menuOverlay.addEventListener('click', () => {
-            toggleMenu();
-        });
+    // mounted() {
+    //     const menu = document.querySelector('.menu');
+    //     const menuSection = menu.querySelector('.menu-section');
+    //     const menuArrow = menu.querySelector('.menu-mobile-arrow');
+    //     const menuClosed = menu.querySelector('.menu-mobile-close');
+    //     const menuTrigger = document.querySelector('.menu-mobile-trigger');
+    //     const menuOverlay = document.querySelector('.overlay');
+    //     let subMenu;
+    //     menuSection.addEventListener('click', (e) => {
+    //         if (!menu.classList.contains('active')) {
+    //             return;
+    //         }
+    //         if (e.target.closest('.menu-item-has-children')) {
+    //             const hasChildren = e.target.closest('.menu-item-has-children');
+    //             showSubMenu(hasChildren);
+    //         }
+    //     });
+    //     menuArrow.addEventListener('click', () => {
+    //         hideSubMenu();
+    //     });
+    //     menuTrigger.addEventListener('click', () => {
+    //         toggleMenu();
+    //     });
+    //     menuClosed.addEventListener('click', () => {
+    //         toggleMenu();
+    //     });
+    //     menuOverlay.addEventListener('click', () => {
+    //         toggleMenu();
+    //     });
 
-        function toggleMenu() {
-            menu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-        }
+    //     function toggleMenu() {
+    //         menu.classList.toggle('active');
+    //         menuOverlay.classList.toggle('active');
+    //     }
 
-        function showSubMenu(hasChildren) {
-            subMenu = hasChildren.querySelector('.menu-subs');
-            subMenu.classList.add('active');
-            subMenu.style.animation = 'slideLeft 0.5s ease forwards';
-            const menuTitle = hasChildren.querySelector('i').parentNode.childNodes[0].textContent;
-            menu.querySelector('.menu-mobile-title').innerHTML = menuTitle;
-            menu.querySelector('.menu-mobile-header').classList.add('active');
-        }
+    //     function showSubMenu(hasChildren) {
+    //         subMenu = hasChildren.querySelector('.menu-subs');
+    //         subMenu.classList.add('active');
+    //         subMenu.style.animation = 'slideLeft 0.5s ease forwards';
+    //         const menuTitle = hasChildren.querySelector('i').parentNode.childNodes[0].textContent;
+    //         menu.querySelector('.menu-mobile-title').innerHTML = menuTitle;
+    //         menu.querySelector('.menu-mobile-header').classList.add('active');
+    //     }
 
-        function hideSubMenu() {
-            subMenu.style.animation = 'slideRight 0.5s ease forwards';
-            setTimeout(() => {
-                subMenu.classList.remove('active');
-            }, 300);
-            menu.querySelector('.menu-mobile-title').innerHTML = '';
-            menu.querySelector('.menu-mobile-header').classList.remove('active');
-        }
-        window.onresize = function () {
-            if (this.innerWidth > 991) {
-                if (menu.classList.contains('active')) {
-                    toggleMenu();
-                }
-            }
-        };
-    }
+    //     function hideSubMenu() {
+    //         subMenu.style.animation = 'slideRight 0.5s ease forwards';
+    //         setTimeout(() => {
+    //             subMenu.classList.remove('active');
+    //         }, 300);
+    //         menu.querySelector('.menu-mobile-title').innerHTML = '';
+    //         menu.querySelector('.menu-mobile-header').classList.remove('active');
+    //     }
+    //     window.onresize = function () {
+    //         if (this.innerWidth > 991) {
+    //             if (menu.classList.contains('active')) {
+    //                 toggleMenu();
+    //             }
+    //         }
+    //     };
+    // }
 }
 </script>
 
 <style scoped>
 #profile{
     font-size: x-large;
-    background: transparent;    color: #7e7e7e;
+    background: transparent;  margin-left: -42px;  color: #7e7e7e;
 }
 .profile{
       margin-top: 42px;
@@ -925,18 +914,13 @@ export default {
   margin-left: -23px;
 }
 #bag{
-    color: #7e7e7e;font-size: x-large;cursor:pointer;
+    color: #7e7e7e;font-size: x-large;cursor:pointer;margin-left: 24px;
 }
 .spans{
-    margin-left: 40px;
+    margin-right: 3px;
 }
-.wishlist{
-    margin-top: 40px;
-  margin-left: -23px;
-}
-#icon{
-    color: #7e7e7e;font-size: x-large;margin-left: -178px;  margin-right: -11px;cursor:pointer;
-}
+
+
 @-webkit-keyframes slideLeft {
     0% {
         opacity: 0;
