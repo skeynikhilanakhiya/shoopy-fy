@@ -12,12 +12,18 @@ import Subitems from '@/components/View/cartmenitems/Menitems'
 import MenitemsCart from "@/components/View/Cart/MenitemsCart.vue"
 import LoginPage from '@/components/View/Login&RegisterPage/LoginPage'
 // import AddtoCart from '@/components/View/Cart/AddtoCart'
+import ProductWishList from '@/components/View/Wishlist/ProductWishList'
 // import Checkboxfilter from "@/components/View/ProductFilter/CheckboxFilter.vue"
 const routes = [
     {
         path: '/',
         name: 'Home-page',
         component: Home
+    }, 
+    {
+        path: '/item/wishlist',
+        name: 'Product-WishList',
+        component: ProductWishList
     }, 
     // {
     //     path: '/cart',
