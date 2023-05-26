@@ -34,7 +34,7 @@
                                             </ul>
                                         </div>
                                         <p class="item-price"><strike>$400.00</strike> <b>$369.00</b></p>
-                                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                                        <a href="#" class="btn btn-primary" >Add to Cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -380,6 +380,12 @@ export default {
 	});
 });	
     },
+    methods:{
+         Addtocart(item) {
+            this.cart.push(item)
+            console.log(this.cart);
+        },
+    }
 }
 </script>
 <style scoped>
