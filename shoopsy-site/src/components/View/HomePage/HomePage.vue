@@ -6,7 +6,7 @@
     <productslist></productslist>
 </div>
 <div>
-    <sliderproduct></sliderproduct>
+    <Dealofproduct></Dealofproduct>
 </div>
 <div>
     <productsitem></productsitem>
@@ -36,7 +36,7 @@
 <script>
 import saleSlider from '@/components/View/sliders/SaleSlider'
 import productslist from '@/components/View/Products/Productslist'
-import sliderproduct from '@/components/View/sliders/Sliderproduct'
+import Dealofproduct from '@/components/View/Products/DealofDayProducts.vue'
 import productsitem from '@/components/View/CategoriesProduct/Productsitem.vue'
 import productcarsoul from '@/components/View/sliders/productcarsoul'
 import Productgrid from '@/components/View/CategoriesProduct/Productgrid'
@@ -50,7 +50,7 @@ export default {
     components: {
         productslist,
         saleSlider,
-        sliderproduct,
+        Dealofproduct,
         productsitem,
         productcarsoul,
         Productgrid,
