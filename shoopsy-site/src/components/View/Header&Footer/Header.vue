@@ -719,7 +719,10 @@
                     </ul>
                 </nav>
             </div>
-            <i class="fa fa-user" id="profile" aria-hidden="true"></i><a href="#" class="profile">Profile</a> 
+              <router-link to="/login">
+            <i class="fa fa-user" id="profile" aria-hidden="true"></i>
+              </router-link>
+            <span class="profile">Profile</span> 
 
         <span  class="spans"><i class="fa fa-shopping-bag" id="bag" aria-hidden="true"></i></span><a href="#" class="ancer">Bag</a> 
                     
@@ -731,17 +734,17 @@
     </div>
 </header>
 <div class="row">
-    <Womenproductitem class="display" v-for="product in currentProducts" :key="product.id" :product="product" />
+    <!-- <Womenproductitem class="display" v-for="product in currentProducts" :key="product.id" :product="product" /> -->
 </div>
 </template>
 
 <script>
-import Womenproductitem from '@/components/View/cartwomenitems/womenitems.vue'
+// import Womenproductitem from '@/components/View/cartwomenitems/womenitems.vue'
 
 export default {
     name: "Nav-bar",
     component: {
-        Womenproductitem
+        // Womenproductitem
 
     },
     data() {
@@ -907,7 +910,8 @@ export default {
 }
 .profile{
       margin-top: 42px;
-  margin-left: -28px;
+      cursor: pointer;
+  margin-left: -38px;
 }
 .ancer{
     margin-top: 40px;
