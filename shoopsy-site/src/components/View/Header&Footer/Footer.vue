@@ -103,8 +103,8 @@
                 <i class="fas fa-envelope me-3"></i>
                 shoopy-fy.com
               </p>
-              <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-              <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+              <p><i class="fas fa-phone me-3"></i> +91 9714724886</p>
+              <p><i class="fas fa-print me-3"></i> +91 9714724886</p>
             </div>
             <!-- Grid column -->
           </div>
