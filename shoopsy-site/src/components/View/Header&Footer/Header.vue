@@ -632,7 +632,7 @@
                                         </li><br>
 
                                     </ul>
-                                   
+
                                 </div>
                                 <div class="list-item">
                                     <h4 class="title">Home Décor</h4><br>
@@ -696,19 +696,20 @@
                             <div class="menu-subs menu-column-1">
 
                                 <ul>
-                                <li>
-                                   <router-link to="/login"> <a href="#" style="    font-size: 14px;">Login and Register</a></router-link></li>
-                                   
+                                    <li>
+                                        <router-link to="/login"> <a href="#" style="    font-size: 14px;">Login and Register</a></router-link>
+                                    </li>
+
                                 </ul>
                             </div>
                         </li>
+                        
                         <li><a href="# " style="  margin-left: 19px;" class="responsiv">Contact</a></li>
-
-                    <li>
-                            <a href="" style="  margin-left: 279px;">
+                        <li>
+                            <a href="#" style="margin-left: 279px;">
                                 <div class="wrap">
                                     <div class="search">
-                                        <input type="text" class="searchTerm" placeholder="What are you looking for?">
+                                        <input type="search" v-model="search" class="searchTerm" placeholder="Search title..">
                                         <button type="submit" class="searchButton">
                                             <i class="fa fa-search" style="width: 58px;"></i>
                                         </button>
@@ -719,17 +720,30 @@
                     </ul>
                 </nav>
             </div>
-              <router-link to="/login">
-            <i class="fa fa-user" id="profile" aria-hidden="true"></i>
-              </router-link>
-            <span class="profile">Profile</span> 
+            <!-- <button type="button" class="btn btn-success my-2 my-sm-0" data-toggle="modal" data-target="#staticBackdrop"> -->
+<!-- <router-link to="/wishlist" style="  margin-left: -132px;">   -->
+                <!-- <span class="wishlist"><img src="" id="wishlist" aria-hidden="true" style="    width: 23px;
+  margin-top: -11px;
 
-        <span  class="spans"><i class="fa fa-shopping-bag" id="bag" aria-hidden="true"></i></span><a href="#" class="ancer">Bag</a> 
-                    
-                    <span></span>
-                    <span></span>
-             
-       
+  margin-right: 4px;"></span>
+  <a href="#" class="list"><b>Wishlist</b></a> -->
+<!-- </router-link> -->
+            <!-- </button> -->
+            <router-link to="/login" style="margin-left: -14px;">
+                <img src="@/assets/icons/user.png" style="  width: 59px;
+  margin-left: -38px;
+  margin-top: -10px;" aria-hidden="true">
+            </router-link>
+            <span class="profile"><b>Profile</b></span>
+
+            <router-link to="/buy now">
+            <span class="spans"><img src="@/assets/icons/bag.png" style="    width: 23px;
+  margin-left: 35px;
+  margin-top: 11px;" aria-hidden="true"></span><a href="#" class="ancer"><b>Bag</b></a>
+            </router-link>
+            <span></span>
+            <span></span>
+
         </div>
     </div>
 </header>
@@ -838,6 +852,13 @@ export default {
     methods: {
         fatchdata(category) {
             this.currentProducts = category != '' ? this.products.filter(product => product.category === category) : this.products;
+        },
+        CheckNow() {
+
+            this.$router.push({
+                name: "cart-page"
+            })
+
         }
     },
     // mounted() {
@@ -904,26 +925,76 @@ export default {
 </script>
 
 <style scoped>
-#profile{
-    font-size: x-large;
-    background: transparent;  margin-left: -42px;  color: #7e7e7e;
-}
-.profile{
-      margin-top: 42px;
-      cursor: pointer;
-  margin-left: -38px;
-}
-.ancer{
-    margin-top: 40px;
-  margin-left: -23px;
-}
-#bag{
-    color: #7e7e7e;font-size: x-large;cursor:pointer;margin-left: 24px;
-}
-.spans{
-    margin-right: 3px;
+.search {
+    margin-left: -250px;
+    width: 400px;
+    position: relative;
+    display: flex;
 }
 
+.searchTerm {
+    width: 586%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 37px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.searchTerm:focus {
+    color: #00B4CC;
+}
+
+.list {
+    margin-top: 40px;
+    font-size: smaller;
+    color: #121212;
+    margin-left: -35px;
+}
+
+.searchButton {
+    width: 60px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.profile {
+    margin-top: 42px;
+    cursor: pointer;
+    font-size: smaller;
+    margin-left: -67px;
+}
+
+.ancer {
+    margin-top: 40px;
+    font-size: smaller;
+    color: #121212;
+    /* margin-left: -23px; */
+      margin-left: 33px;
+}
+
+#bag {
+    color: #7e7e7e;
+    font-size: x-large;
+    cursor: pointer;
+    margin-left: 24px;
+}
+
+.wishlist {
+    margin-left: -130px;
+
+}
+
+.spans {
+    margin-right: 3px;
+}
 
 @-webkit-keyframes slideLeft {
     0% {
@@ -1131,65 +1202,34 @@ video {
 }
 
 .header-item-right .menu-icon {
-font-size: 2.35rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-left: 75px;
-  border: none;
-  outline: none;
-  color: #121212;
-  transition: all 0.3s ease;
+    font-size: 2.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: 75px;
+    border: none;
+    outline: none;
+    color: #121212;
+    transition: all 0.3s ease;
 }
+
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
-body{
-  background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.search {
-  width:  600%;
-  position: relative;
-  display: flex;
-  margin-left: -188px;
-}
-
-.searchTerm {
-  /* width: 586%;   */
-  border: 3px solid #00B4CC;
-  border-right: none;
-  padding: 5px;
-  height: 37px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
-}
-
-.searchTerm:focus{
-  color: #00B4CC;
-}
-
-.searchButton {
-  width: 60px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: 20px;
+body {
+    background: #f2f2f2;
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*Resize the wrap to see the search bar change!*/
-.wrap{
-  width: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 .header .menu>ul>li {
     display: inline-block;
     line-height: 3.125rem;

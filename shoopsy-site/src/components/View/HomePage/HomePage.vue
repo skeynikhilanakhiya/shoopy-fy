@@ -34,11 +34,11 @@
 </template>
 
 <script>
-import saleSlider from '@/components/View/sliders/SaleSlider'
+import saleSlider from '@/components/View/sliders/SaleSlider.vue'
 import productslist from '@/components/View/Products/Productslist'
 import Dealofproduct from '@/components/View/Products/DealofDayProducts.vue'
 import productsitem from '@/components/View/CategoriesProduct/Productsitem.vue'
-import productcarsoul from '@/components/View/sliders/productcarsoul'
+import productcarsoul from '@/components/View/sliders/productcarsoul.vue'
 import Productgrid from '@/components/View/CategoriesProduct/Productgrid'
 import allProduct from '@/components/View/Products/AllProduct.vue'
 import sliderintwo from "@/components/View/sliders/sliderintwo.vue"
