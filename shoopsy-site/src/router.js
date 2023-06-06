@@ -14,14 +14,33 @@ import LoginPage from '@/components/View/Login&RegisterPage/LoginPage'
 // import AddtoCart from '@/components/View/Cart/AddtoCart'
 import ProductWishList from '@/components/View/Wishlist/ProductWishList'
 // import Checkboxfilter from "@/components/View/ProductFilter/CheckboxFilter.vue"
+import PlaceOrder from '@/components/View/OrderNow/PlaceOrderForm.vue'
+import AddToBag from '@/components/View/AddToBag/AddToBag.vue'
+import Addtoorder from '@/components/View/AddToBag/Addtoorder'
 const routes = [
     {
         path: '/',
         name: 'Home-page',
         component: Home
+    },
+    {
+        path: '/buy now',
+        name: 'add-order',
+        component: Addtoorder
+    },
+    {
+        path: '/add bag',
+        name: 'Add-bag',
+        component: AddToBag,
+       
     }, 
     {
-        path: '/item/wishlist',
+        path: '/order now',
+        name: 'order-page',
+        component: PlaceOrder
+    }, 
+    {
+        path: '/wishlist',
         name: 'Product-WishList',
         component: ProductWishList
     }, 
